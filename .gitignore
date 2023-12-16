@@ -1,0 +1,5 @@
+# fill with typical python stuff
+
+.venv
+.openai.key
+.idea
