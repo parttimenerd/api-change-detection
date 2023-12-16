@@ -95,5 +95,13 @@ Example usage:
 ./analyze.py analyze_ref jdk-21-ga HEAD "test/micro/org/openjdk/bench/java/lang/foreign/StrLenTest.java" "src/java.base/share/classes/java/lang/foreign/**/*.java"
 ```
 
+TODO:
+
+- [ ] test with OpenAI key
+- [ ] summarize results
+- [ ] generate markdown report (and transform to html)
+- [ ] improve README (fix LICENSE statement, ...)
+- [ ] start blog post
+
 ## License
 MIT
