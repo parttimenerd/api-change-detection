@@ -3,3 +3,8 @@
 .venv
 .openai.key
 .idea
+jdk
+venv
+.class.cache
+poetry.lock
+result.json

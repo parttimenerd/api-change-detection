@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "api-change-detection"
+version = "0.1.0"
+description = "Find changes between APIs in different OpenJDK revisions"
+authors = ["Johannes Bechberger <johannes.bechberger@sap.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.11.*"
+openai = "^1.6.0"
+tree_sitter_languages = "^1.8.0"
+tiktoken = "^0.5.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

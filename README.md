@@ -1,5 +1,7 @@
 # API change discovery
 
+__Experimental, does not work properly__
+
 The aim is to find changes in the [Panama API](https://openjdk.org/projects/panama/) of the OpenJDK between two versions,
 by examining the test diffs using GPT 3.5.
 
@@ -64,7 +66,10 @@ I tried a few local large language models, like Llama2, but the results were not
   - use `--recursive` when cloning
   - or `git submodule update --init --recursive` after cloning
 - install [openai python package](https://pypi.org/project/openai/) and optionally [tree-sitter-languages](https://pypi.org/project/tree-sitter-languages/)
-  - `pip3 install openai tree-sitter-languages`
+  - `pip3 install openai tree-sitter-languages` with Python 3.11
+  - or just use [poetry](https://python-poetry.org/) and run `poetry env use python3.11; poetry install`
+  - then run `poetry shell` to activate the virtual environment or
+  - run `poetry run python3 analyze.py ...` to run the script in the virtual environment
 - store your API key in `.openai.key` in the root directory
 
 ## Usage
@@ -92,16 +97,15 @@ Example usage:
 ./analyze.py list_classes HEAD "src/java.base/share/classes/java/lang/foreign/**/*.java"
 
 # analyze the diff of a single test file
-./analyze.py analyze_ref jdk-21-ga HEAD "test/micro/org/openjdk/bench/java/lang/foreign/StrLenTest.java" "src/java.base/share/classes/java/lang/foreign/**/*.java"
+./analyze.py analyze_ref jdk-21-ga master "test/micro/org/openjdk/bench/java/lang/foreign/StrLenTest.java" "src/java.base/share/classes/java/lang/foreign/**/*.java"
 ```
 
 TODO:
 
-- [ ] test with OpenAI key
 - [ ] summarize results
 - [ ] generate markdown report (and transform to html)
 - [ ] improve README (fix LICENSE statement, ...)
 - [ ] start blog post
 
 ## License
-MIT
+MIT, Copyright 2023 SAP SE or an SAP affiliate company, Johannes Bechberger and contributors
